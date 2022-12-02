@@ -1,0 +1,18 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block content %}
+<div class="container-fluid"> 
+
+    <h2>風向風速予報</h2>
+    <br />
+    <div class="row">
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <a href="/scraping1" class="btn btn-lg btn-primary btn-block" type="button">伊万里市黒川塩屋</a>
+            <a href="/scraping2" class="btn btn-lg btn-secondary btn-block" type="button">五島市黄島</a>
+            <a href="/scraping3" class="btn btn-lg btn-success btn-block" type="button">佐世保市宇久島</a>
+            <a href="/scraping4" class="btn btn-lg btn-danger btn-block" type="button">天草市大江</a>
+            <a href="/scraping5" class="btn btn-lg btn-warning btn-block" type="button">薩摩河内市甑町</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
