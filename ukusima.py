@@ -103,13 +103,80 @@ def scraping():
     wd1 =[]
 
     for i in wind_d1_span:
-        wd1.append(i.string)
-        
-    #過去の風向を取得
+        if i.string == '北':
+            wd1.append('North')
+        elif i.string == '北北西':
+            wd1.append('NNW')
+        elif i.string == '北西':
+            wd1.append('NW')
+        elif i.string == '西北西':
+            wd1.append('WNW')
+        elif i.string == '西':
+            wd1.append('West')
+        elif i.string == '西南西':
+            wd1.append('WSW')
+        elif i.string == '南西':
+            wd1.append('SW')
+        elif i.string == '南南西':
+            wd1.append('SSW')
+        elif i.string == '南':
+            wd1.append('South')
+        elif i.string == '南南東':
+            wd1.append('SSE')
+        elif i.string == '南東':
+            wd1.append('SE')
+        elif i.string == '東南東':
+            wd1.append('ESE')
+        elif i.string == '東':
+            wd1.append('East')
+        elif i.string == '東北東':
+            wd1.append('ENE')
+        elif i.string == '北東':
+            wd1.append('NE')
+        elif i.string == '北北東':
+            wd1.append('NNE')
+        elif i.string == '静隠':
+            wd1.append('Calm')
+        else: wd1.append('error')
+#過去の風向を取得
     wind_d1_past = wind_d1.find_all(class_='past')
     wd1_past = []
     for i in wind_d1_past:
-        wd1_past.append(i.string)
+        if i.string == '北':
+            wd1_past.append('North')
+        elif i.string == '北北西':
+            wd1_past.append('NNW')
+        elif i.string == '北西':
+            wd1_past.append('NW')
+        elif i.string == '西北西':
+            wd1_past.append('WNW')
+        elif i.string == '西':
+            wd1_past.append('West')
+        elif i.string == '西南西':
+            wd1_past.append('WSW')
+        elif i.string == '南西':
+            wd1_past.append('SW')
+        elif i.string == '南南西':
+            wd1_past.append('SSW')
+        elif i.string == '南':
+            wd1_past.append('South')
+        elif i.string == '南南東':
+            wd1_past.append('SSE')
+        elif i.string == '南東':
+            wd1_past.append('SE')
+        elif i.string == '東南東':
+            wd1_past.append('ESE')
+        elif i.string == '東':
+            wd1_past.append('East')
+        elif i.string == '東北東':
+            wd1_past.append('ENE')
+        elif i.string == '北東':
+            wd1_past.append('NE')
+        elif i.string == '北北東':
+            wd1_past.append('NNE')
+        elif i.string == '静隠':
+            wd1_past.append('Calm')
+        else: wd1_past.append('error')
 
 
     # In[10]:
@@ -138,7 +205,41 @@ def scraping():
     wd1_t = []
 
     for i in wind_d1_span_t:
-        wd1.append(i.string)
+        if i.string == '北':
+            wd1.append('North')
+        elif i.string == '北北西':
+            wd1.append('NNW')
+        elif i.string == '北西':
+            wd1.append('NW')
+        elif i.string == '西北西':
+            wd1.append('WNW')
+        elif i.string == '西':
+            wd1.append('West')
+        elif i.string == '西南西':
+            wd1.append('WSW')
+        elif i.string == '南西':
+            wd1.append('SW')
+        elif i.string == '南南西':
+            wd1.append('SSW')
+        elif i.string == '南':
+            wd1.append('South')
+        elif i.string == '南南東':
+            wd1.append('SSE')
+        elif i.string == '南東':
+            wd1.append('SE')
+        elif i.string == '東南東':
+            wd1.append('ESE')
+        elif i.string == '東':
+            wd1.append('East')
+        elif i.string == '東北東':
+            wd1.append('ENE')
+        elif i.string == '北東':
+            wd1.append('NE')
+        elif i.string == '北北東':
+            wd1.append('NNE')
+        elif i.string == '静隠':
+            wd1.append('Calm')
+        else: wd1.append('error')
 
 
     # In[11]:
@@ -212,39 +313,39 @@ def scraping():
     wd2 = []
     for i in wd2_img_src:
         if i == '//weathernews.jp/onebox/img/wind/wind_1_16.png' or i == '//weathernews.jp/onebox/img/wind/wind_2_16.png' or i == '//weathernews.jp/onebox/img/wind/wind_3_16.png' or i == '//weathernews.jp/onebox/img/wind/wind_4_16.png' or i == '//weathernews.jp/onebox/img/wind/wind_5_16.png':
-            wd2.append('北')
+            wd2.append('North')
         elif i =='//weathernews.jp/onebox/img/wind/wind_1_15.png' or i == '//weathernews.jp/onebox/img/wind/wind_2_15.png' or i == '//weathernews.jp/onebox/img/wind/wind_3_15.png' or i == '//weathernews.jp/onebox/img/wind/wind_4_15.png' or i == '//weathernews.jp/onebox/img/wind/wind_5_15.png':
-            wd2.append('北北西')
+            wd2.append('NNW')
         elif i =='//weathernews.jp/onebox/img/wind/wind_1_14.png' or i == '//weathernews.jp/onebox/img/wind/wind_2_14.png' or i == '//weathernews.jp/onebox/img/wind/wind_3_14.png' or i == '//weathernews.jp/onebox/img/wind/wind_4_14.png' or i == '//weathernews.jp/onebox/img/wind/wind_5_14.png':
-            wd2.append('北西')
+            wd2.append('NW')
         elif i =='//weathernews.jp/onebox/img/wind/wind_1_13.png' or i == '//weathernews.jp/onebox/img/wind/wind_2_13.png' or i == '//weathernews.jp/onebox/img/wind/wind_3_13.png' or i == '//weathernews.jp/onebox/img/wind/wind_4_13.png' or i == '//weathernews.jp/onebox/img/wind/wind_5_13.png':
-            wd2.append('西北西')
+            wd2.append('WNW')
         elif i =='//weathernews.jp/onebox/img/wind/wind_1_12.png' or i == '//weathernews.jp/onebox/img/wind/wind_2_12.png' or i == '//weathernews.jp/onebox/img/wind/wind_3_12.png' or i == '//weathernews.jp/onebox/img/wind/wind_4_12.png' or i == '//weathernews.jp/onebox/img/wind/wind_5_12.png':
-            wd2.append('西')
+            wd2.append('West')
         elif i =='//weathernews.jp/onebox/img/wind/wind_1_11.png' or i == '//weathernews.jp/onebox/img/wind/wind_2_11.png' or i == '//weathernews.jp/onebox/img/wind/wind_3_11.png' or i == '//weathernews.jp/onebox/img/wind/wind_4_11.png' or i == '//weathernews.jp/onebox/img/wind/wind_5_11.png':
-            wd2.append('西南西')
+            wd2.append('WSW')
         elif i =='//weathernews.jp/onebox/img/wind/wind_1_10.png' or i == '//weathernews.jp/onebox/img/wind/wind_2_10.png' or i == '//weathernews.jp/onebox/img/wind/wind_3_10.png' or i == '//weathernews.jp/onebox/img/wind/wind_4_10.png' or i == '//weathernews.jp/onebox/img/wind/wind_5_10.png':
-            wd2.append('南西')
+            wd2.append('SW')
         elif i =='//weathernews.jp/onebox/img/wind/wind_1_09.png' or i == '//weathernews.jp/onebox/img/wind/wind_2_09.png' or i == '//weathernews.jp/onebox/img/wind/wind_3_09.png' or i == '//weathernews.jp/onebox/img/wind/wind_4_09.png' or i == '//weathernews.jp/onebox/img/wind/wind_5_09.png':
-            wd2.append('南南西')
+            wd2.append('SSW')
         elif i =='//weathernews.jp/onebox/img/wind/wind_1_08.png' or i == '//weathernews.jp/onebox/img/wind/wind_2_08.png' or i == '//weathernews.jp/onebox/img/wind/wind_3_08.png' or i == '//weathernews.jp/onebox/img/wind/wind_4_08.png' or i == '//weathernews.jp/onebox/img/wind/wind_5_08.png':
-            wd2.append('南')
+            wd2.append('South')
         elif i =='//weathernews.jp/onebox/img/wind/wind_1_07.png' or i == '//weathernews.jp/onebox/img/wind/wind_2_07.png' or i == '//weathernews.jp/onebox/img/wind/wind_3_07.png' or i == '//weathernews.jp/onebox/img/wind/wind_4_07.png' or i == '//weathernews.jp/onebox/img/wind/wind_5_07.png':
-            wd2.append('南南東')
+            wd2.append('SSE')
         elif i =='//weathernews.jp/onebox/img/wind/wind_1_06.png' or i == '//weathernews.jp/onebox/img/wind/wind_2_06.png' or i == '//weathernews.jp/onebox/img/wind/wind_3_06.png' or i == '//weathernews.jp/onebox/img/wind/wind_4_06.png' or i == '//weathernews.jp/onebox/img/wind/wind_5_06.png':
-            wd2.append('南東')
+            wd2.append('SE')
         elif i =='//weathernews.jp/onebox/img/wind/wind_1_05.png' or i == '//weathernews.jp/onebox/img/wind/wind_2_05.png' or i == '//weathernews.jp/onebox/img/wind/wind_3_05.png' or i == '//weathernews.jp/onebox/img/wind/wind_4_05.png' or i == '//weathernews.jp/onebox/img/wind/wind_5_05.png':
-            wd2.append('東南東')
+            wd2.append('ESE')
         elif i =='//weathernews.jp/onebox/img/wind/wind_1_04.png' or i == '//weathernews.jp/onebox/img/wind/wind_2_04.png' or i == '//weathernews.jp/onebox/img/wind/wind_3_04.png' or i == '//weathernews.jp/onebox/img/wind/wind_4_04.png' or i == '//weathernews.jp/onebox/img/wind/wind_5_04.png':
-            wd2.append('東')
+            wd2.append('East')
         elif i =='//weathernews.jp/onebox/img/wind/wind_1_03.png' or i == '//weathernews.jp/onebox/img/wind/wind_2_03.png' or i == '//weathernews.jp/onebox/img/wind/wind_3_03.png' or i == '//weathernews.jp/onebox/img/wind/wind_4_03.png' or i == '//weathernews.jp/onebox/img/wind/wind_5_03.png':
-            wd2.append('東北東')
+            wd2.append('ENE')
         elif i =='//weathernews.jp/onebox/img/wind/wind_1_02.png' or i == '//weathernews.jp/onebox/img/wind/wind_2_02.png' or i == '//weathernews.jp/onebox/img/wind/wind_3_02.png' or i == '//weathernews.jp/onebox/img/wind/wind_4_02.png' or i == '//weathernews.jp/onebox/img/wind/wind_5_02.png':
-            wd2.append('北東')
+            wd2.append('NE')
         elif i =='//weathernews.jp/onebox/img/wind/wind_1_01.png' or i == '//weathernews.jp/onebox/img/wind/wind_2_01.png' or i == '//weathernews.jp/onebox/img/wind/wind_3_01.png' or i == '//weathernews.jp/onebox/img/wind/wind_4_01.png' or i == '//weathernews.jp/onebox/img/wind/wind_5_01.png':
-            wd2.append('北北東')
+            wd2.append('NNE')
         elif i =='//weathernews.jp/onebox/img/wind/wind_0_00.png':
-            wd2.append('静隠')
+            wd2.append('Calm')
         else: wd2.append('error')
 
 
