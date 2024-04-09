@@ -285,9 +285,11 @@ def scraping():
         ws2.append(i.text)
     del ws2[0]
 
+    ws2_str = [i.replace('\n','')  for i in ws2 ]
+    
     #int型に変換
     ws2_int = []
-    for i in ws2:
+    for i in ws2_str:
         for j in range(100):
             if i == str(j)+'m':
                 ws2_int.append(j)
@@ -310,42 +312,41 @@ def scraping():
     #画像データを文字に変換
     wd2 = []
     for i in wd2_img_src:
-        if i == '//weathernews.jp/onebox/img/wind/wind_1_16.png' or i == '//weathernews.jp/onebox/img/wind/wind_2_16.png' or i == '//weathernews.jp/onebox/img/wind/wind_3_16.png' or i == '//weathernews.jp/onebox/img/wind/wind_4_16.png' or i == '//weathernews.jp/onebox/img/wind/wind_5_16.png':
-            wd2.append('North')
-        elif i =='//weathernews.jp/onebox/img/wind/wind_1_15.png' or i == '//weathernews.jp/onebox/img/wind/wind_2_15.png' or i == '//weathernews.jp/onebox/img/wind/wind_3_15.png' or i == '//weathernews.jp/onebox/img/wind/wind_4_15.png' or i == '//weathernews.jp/onebox/img/wind/wind_5_15.png':
-            wd2.append('NNW')
-        elif i =='//weathernews.jp/onebox/img/wind/wind_1_14.png' or i == '//weathernews.jp/onebox/img/wind/wind_2_14.png' or i == '//weathernews.jp/onebox/img/wind/wind_3_14.png' or i == '//weathernews.jp/onebox/img/wind/wind_4_14.png' or i == '//weathernews.jp/onebox/img/wind/wind_5_14.png':
-            wd2.append('NW')
-        elif i =='//weathernews.jp/onebox/img/wind/wind_1_13.png' or i == '//weathernews.jp/onebox/img/wind/wind_2_13.png' or i == '//weathernews.jp/onebox/img/wind/wind_3_13.png' or i == '//weathernews.jp/onebox/img/wind/wind_4_13.png' or i == '//weathernews.jp/onebox/img/wind/wind_5_13.png':
-            wd2.append('WNW')
-        elif i =='//weathernews.jp/onebox/img/wind/wind_1_12.png' or i == '//weathernews.jp/onebox/img/wind/wind_2_12.png' or i == '//weathernews.jp/onebox/img/wind/wind_3_12.png' or i == '//weathernews.jp/onebox/img/wind/wind_4_12.png' or i == '//weathernews.jp/onebox/img/wind/wind_5_12.png':
-            wd2.append('West')
-        elif i =='//weathernews.jp/onebox/img/wind/wind_1_11.png' or i == '//weathernews.jp/onebox/img/wind/wind_2_11.png' or i == '//weathernews.jp/onebox/img/wind/wind_3_11.png' or i == '//weathernews.jp/onebox/img/wind/wind_4_11.png' or i == '//weathernews.jp/onebox/img/wind/wind_5_11.png':
-            wd2.append('WSW')
-        elif i =='//weathernews.jp/onebox/img/wind/wind_1_10.png' or i == '//weathernews.jp/onebox/img/wind/wind_2_10.png' or i == '//weathernews.jp/onebox/img/wind/wind_3_10.png' or i == '//weathernews.jp/onebox/img/wind/wind_4_10.png' or i == '//weathernews.jp/onebox/img/wind/wind_5_10.png':
-            wd2.append('SW')
-        elif i =='//weathernews.jp/onebox/img/wind/wind_1_09.png' or i == '//weathernews.jp/onebox/img/wind/wind_2_09.png' or i == '//weathernews.jp/onebox/img/wind/wind_3_09.png' or i == '//weathernews.jp/onebox/img/wind/wind_4_09.png' or i == '//weathernews.jp/onebox/img/wind/wind_5_09.png':
-            wd2.append('SSW')
-        elif i =='//weathernews.jp/onebox/img/wind/wind_1_08.png' or i == '//weathernews.jp/onebox/img/wind/wind_2_08.png' or i == '//weathernews.jp/onebox/img/wind/wind_3_08.png' or i == '//weathernews.jp/onebox/img/wind/wind_4_08.png' or i == '//weathernews.jp/onebox/img/wind/wind_5_08.png':
-            wd2.append('South')
-        elif i =='//weathernews.jp/onebox/img/wind/wind_1_07.png' or i == '//weathernews.jp/onebox/img/wind/wind_2_07.png' or i == '//weathernews.jp/onebox/img/wind/wind_3_07.png' or i == '//weathernews.jp/onebox/img/wind/wind_4_07.png' or i == '//weathernews.jp/onebox/img/wind/wind_5_07.png':
-            wd2.append('SSE')
-        elif i =='//weathernews.jp/onebox/img/wind/wind_1_06.png' or i == '//weathernews.jp/onebox/img/wind/wind_2_06.png' or i == '//weathernews.jp/onebox/img/wind/wind_3_06.png' or i == '//weathernews.jp/onebox/img/wind/wind_4_06.png' or i == '//weathernews.jp/onebox/img/wind/wind_5_06.png':
-            wd2.append('SE')
-        elif i =='//weathernews.jp/onebox/img/wind/wind_1_05.png' or i == '//weathernews.jp/onebox/img/wind/wind_2_05.png' or i == '//weathernews.jp/onebox/img/wind/wind_3_05.png' or i == '//weathernews.jp/onebox/img/wind/wind_4_05.png' or i == '//weathernews.jp/onebox/img/wind/wind_5_05.png':
-            wd2.append('ESE')
-        elif i =='//weathernews.jp/onebox/img/wind/wind_1_04.png' or i == '//weathernews.jp/onebox/img/wind/wind_2_04.png' or i == '//weathernews.jp/onebox/img/wind/wind_3_04.png' or i == '//weathernews.jp/onebox/img/wind/wind_4_04.png' or i == '//weathernews.jp/onebox/img/wind/wind_5_04.png':
-            wd2.append('East')
-        elif i =='//weathernews.jp/onebox/img/wind/wind_1_03.png' or i == '//weathernews.jp/onebox/img/wind/wind_2_03.png' or i == '//weathernews.jp/onebox/img/wind/wind_3_03.png' or i == '//weathernews.jp/onebox/img/wind/wind_4_03.png' or i == '//weathernews.jp/onebox/img/wind/wind_5_03.png':
-            wd2.append('ENE')
-        elif i =='//weathernews.jp/onebox/img/wind/wind_1_02.png' or i == '//weathernews.jp/onebox/img/wind/wind_2_02.png' or i == '//weathernews.jp/onebox/img/wind/wind_3_02.png' or i == '//weathernews.jp/onebox/img/wind/wind_4_02.png' or i == '//weathernews.jp/onebox/img/wind/wind_5_02.png':
-            wd2.append('NE')
-        elif i =='//weathernews.jp/onebox/img/wind/wind_1_01.png' or i == '//weathernews.jp/onebox/img/wind/wind_2_01.png' or i == '//weathernews.jp/onebox/img/wind/wind_3_01.png' or i == '//weathernews.jp/onebox/img/wind/wind_4_01.png' or i == '//weathernews.jp/onebox/img/wind/wind_5_01.png':
-            wd2.append('NNE')
-        elif i =='//weathernews.jp/onebox/img/wind/wind_0_00.png':
-            wd2.append('Calm')
-        else: wd2.append('error')
-
+    if i == '//weathernews.jp/onebox/img/wind/png/wind_1_16.png' or i == '//weathernews.jp/onebox/img/wind/png/wind_2_16.png' or i == '//weathernews.jp/onebox/img/wind/png/wind_3_16.png':
+        wd2.append('North')
+    elif i =='//weathernews.jp/onebox/img/wind/png/wind_1_15.png' or i == '//weathernews.jp/onebox/img/wind/png/wind_2_15.png' or i == '//weathernews.jp/onebox/img/wind/png/wind_3_15.png':
+        wd2.append('NNW')
+    elif i =='//weathernews.jp/onebox/img/wind/png/wind_1_14.png' or i == '//weathernews.jp/onebox/img/wind/png/wind_2_14.png' or i == '//weathernews.jp/onebox/img/wind/png/wind_3_14.png':
+        wd2.append('NW')
+    elif i =='//weathernews.jp/onebox/img/wind/png/wind_1_13.png' or i == '//weathernews.jp/onebox/img/wind/png/wind_2_13.png' or i == '//weathernews.jp/onebox/img/wind/png/wind_3_13.png':
+        wd2.append('WNW')
+    elif i =='//weathernews.jp/onebox/img/wind/png/wind_1_12.png' or i == '//weathernews.jp/onebox/img/wind/png/wind_2_12.png' or i == '//weathernews.jp/onebox/img/wind/png/wind_3_12.png':
+        wd2.append('West')
+    elif i =='//weathernews.jp/onebox/img/wind/png/wind_1_11.png' or i == '//weathernews.jp/onebox/img/wind/png/wind_2_11.png' or i == '//weathernews.jp/onebox/img/wind/png/wind_3_11.png':
+        wd2.append('WSW')
+    elif i =='//weathernews.jp/onebox/img/wind/png/wind_1_10.png' or i == '//weathernews.jp/onebox/img/wind/png/wind_2_10.png' or i == '//weathernews.jp/onebox/img/wind/png/wind_3_10.png':
+        wd2.append('SW')
+    elif i =='//weathernews.jp/onebox/img/wind/png/wind_1_09.png' or i == '//weathernews.jp/onebox/img/wind/png/wind_2_09.png' or i == '//weathernews.jp/onebox/img/wind/png/wind_3_09.png':
+        wd2.append('SSW')
+    elif i =='//weathernews.jp/onebox/img/wind/png/wind_1_08.png' or i == '//weathernews.jp/onebox/img/wind/png/wind_2_08.png' or i == '//weathernews.jp/onebox/img/wind/png/wind_3_08.png':
+        wd2.append('South')
+    elif i =='//weathernews.jp/onebox/img/wind/png/wind_1_07.png' or i == '//weathernews.jp/onebox/img/wind/png/wind_2_07.png' or i == '//weathernews.jp/onebox/img/wind/png/wind_3_07.png':
+        wd2.append('SSE')
+    elif i =='//weathernews.jp/onebox/img/wind/png/wind_1_06.png' or i == '//weathernews.jp/onebox/img/wind/png/wind_2_06.png' or i == '//weathernews.jp/onebox/img/wind/png/wind_3_06.png':
+        wd2.append('SE')
+    elif i =='//weathernews.jp/onebox/img/wind/png/wind_1_05.png' or i == '//weathernews.jp/onebox/img/wind/png/wind_2_05.png' or i == '//weathernews.jp/onebox/img/wind/png/wind_3_05.png':
+        wd2.append('ESE')
+    elif i =='//weathernews.jp/onebox/img/wind/png/wind_1_04.png' or i == '//weathernews.jp/onebox/img/wind/png/wind_2_04.png' or i == '//weathernews.jp/onebox/img/wind/png/wind_3_04.png':
+        wd2.append('East')
+    elif i =='//weathernews.jp/onebox/img/wind/png/wind_1_03.png' or i == '//weathernews.jp/onebox/img/wind/png/wind_2_03.png' or i == '//weathernews.jp/onebox/img/wind/png/wind_3_03.png':
+        wd2.append('ENE')
+    elif i =='//weathernews.jp/onebox/img/wind/png/wind_1_02.png' or i == '//weathernews.jp/onebox/img/wind/png/wind_2_02.png' or i == '//weathernews.jp/onebox/img/wind/png/wind_3_02.png':
+        wd2.append('NE')
+    elif i =='//weathernews.jp/onebox/img/wind/png/wind_1_01.png' or i == '//weathernews.jp/onebox/img/wind/png/wind_2_01.png' or i == '//weathernews.jp/onebox/img/wind/png/wind_3_01.png':
+        wd2.append('NNE')
+    elif i =='//weathernews.jp/onebox/img/wind/png/wind_0_00.png':
+        wd2.append('Calm')
+    else: wd2.append('error')
 
     # In[49]:
 
